@@ -13,7 +13,6 @@
 # =====================================================================================================================
 source("R/00_config.R")
 suppressPackageStartupMessages({ library(dplyr); library(ggplot2) })
-set.seed(1)   # fixed jitter of the points (no effect on the statistics)
 
 yaprev_dir <- Sys.getenv("CRCVISIUM_YAPREV", "~/data/yaprev_spots")
 c2l_tables <- file.path(Sys.getenv("CRCVISIUM_C2L", "~/data/cell2location"), "tables")
@@ -35,26 +34,12 @@ pp <- d %>% group_by(sample) %>%
   summarise(n_spots = n(), n_co_occupied = sum(YAPRev_raw >= YAP_THR & matCAF >= matcaf_thr), .groups = "drop") %>%
   mutate(pct_of_all_spots = 100 * n_co_occupied / n_spots,
          recurr_cens = clin$recurr_cens[match(sample, clin$sample)],
-         group = factor(ifelse(recurr_cens == 1, "Relapse", "No relapse"), levels = c("No relapse", "Relapse")))
+         group = factor(ifelse(recurr_cens == 1, "Relapse", "No Relapse"), levels = c("No Relapse", "Relapse")))
 write.csv(pp, file.path(tables.dir, "FigS8h_YAPRev_matCAF_cooccupation.csv"), row.names = FALSE)
 
 pval <- wilcox.test(pct_of_all_spots ~ group, data = pp)$p.value
-p_lab <- if (pval < 1e-4) "italic(P) < '0.0001'" else if (pval < 1e-3) "italic(P) < '0.001'" else
-  paste0("italic(P) == '", formatC(pval, format = "f", digits = 3), "'")
-fill <- c("No relapse" = unname(relapse_colors["0"]), "Relapse" = unname(relapse_colors["1"]))
-
-p <- ggplot(pp, aes(x = "matCAF\n(cS26+27+28)", y = pct_of_all_spots, fill = group)) +
-  geom_boxplot(outlier.shape = NA, position = position_dodge(width = 0.8), alpha = 0.6) +
-  geom_point(aes(color = group), position = position_jitterdodge(jitter.width = 0.15, dodge.width = 0.8),
-             size = 1.5, alpha = 0.6) +
-  annotate("text", x = 1, y = max(pp$pct_of_all_spots) * 1.12, label = p_lab, parse = TRUE, size = 7, fontface = "bold") +
-  scale_fill_manual(values = fill, name = "") + scale_color_manual(values = fill, guide = "none") +
-  scale_y_continuous(expand = expansion(mult = c(0.02, 0.12))) +
-  labs(title = "matCAF (cS26+cS27+cS28)", x = "", y = "% spots co-occupied") +
-  theme_bw() +
-  theme(axis.ticks.x = element_blank(), axis.title.x = element_blank(),
-        axis.text = element_text(face = "bold", size = rel(1.6), color = "black"),
-        axis.title.y = element_text(face = "bold", size = rel(1.8)), plot.title = element_text(face = "bold", size = rel(1.8)),
-        legend.text = element_text(face = "bold", size = rel(1.4)), legend.position = "top")
+source("R/boxplot_relapse.R")
+p <- boxplot_relapse(pp, "pct_of_all_spots", pval, "YAP-Rev high & matCAF high", "% of spots per patient",
+                     sprintf("Patients (n = %d)", nrow(pp)))
 ggsave(file.path(figures.dir, "FigS8h_YAPRev_matCAF_cooccupation.pdf"), p, width = 5, height = 5)
 message("Mann-Whitney P = ", signif(pval, 3))

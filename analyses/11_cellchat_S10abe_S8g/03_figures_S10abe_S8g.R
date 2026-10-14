@@ -256,26 +256,13 @@ ggsave(file.path(out_dir, "TwoColumn_LR_StromaA2_StromaB2_YAPRevHigh_bidirection
 
 # ---------------------------------------------------------------- Section D: abundance of YAP-Rev high spots
 cat("\n===== D. Number / % of YAP-Rev high spots =====\n")
-two_group_box <- function(v, ylab, file) {
-  D <- data.table(sample = names(v), value = as.numeric(v))[, group := factor(grp[sample], levels = names(GRP_COL))]
-  D[, xp := as.integer(group) - 1L]; set.seed(3); D[, xj := xp + runif(.N, -0.12, 0.12)]
-  a <- D[group == "Relapse", value]; b <- D[group == "No Relapse", value]; p <- mw_p(a, b)
-  top <- max(D$value); h <- top * 0.03
-  g <- ggplot(D) +
-    geom_boxplot(aes(xp, value, group = xp, fill = group), width = 0.55, outlier.shape = NA, alpha = 0.55, linewidth = 0.3, colour = "grey25") +
-    geom_point(aes(xj, value, fill = group), shape = 21, size = 1.6, stroke = 0.2) +
-    annotate("segment", x = c(0, 0, 1), xend = c(1, 0, 1), y = c(top + 2 * h, top + h, top + h), yend = top + 2 * h, linewidth = 0.25) +
-    annotate("text", x = 0.5, y = top + 2.4 * h, label = paste("P =", formatC(p, digits = 2, format = "g")), vjust = 0, size = 8 / PT) +
-    scale_fill_manual(values = GRP_COL, guide = "none") +
-    scale_x_continuous(breaks = 0:1, labels = sprintf("%s\n(n = %d)", names(GRP_COL), c(length(b), length(a))),
-                       limits = c(-0.6, 1.6), expand = c(0, 0)) +
-    labs(x = NULL, y = ylab) + theme_classic(base_size = 9) + theme(axis.text = element_text(colour = "black"))
-  ggsave(file.path(out_dir, file), g, width = 2.6, height = 3.4, device = cairo_pdf)
-  data.table(n_R = length(a), n_NR = length(b), median_R = median(a), median_NR = median(b), P = p)
-}
 ny  <- setNames(sapply(names(grp), function(s) nsp(s, YAP)), names(grp))
 tot <- n[, .(tot = sum(n_spots)), by = sample][match(names(grp), sample), tot]
-abD <- cbind(metric = "pct_of_all_spots", two_group_box(100 * ny / tot, "YAP-Rev high spots\n(% of all spots per patient)",
-                                                       "Boxplot_Pct_YAPRevHigh_spots_RelapseVsNoRelapse.pdf"))
+D <- data.frame(sample = names(grp), group = unname(grp[names(grp)]), pct = 100 * ny / tot)
+a <- D$pct[D$group == "Relapse"]; b <- D$pct[D$group == "No Relapse"]; pD <- mw_p(a, b)
+source("R/boxplot_relapse.R")
+g <- boxplot_relapse(D, "pct", pD, "YAP-Rev high spots", "% of all spots per patient", sprintf("Patients (n = %d)", nrow(D)))
+ggsave(file.path(out_dir, "Boxplot_Pct_YAPRevHigh_spots_RelapseVsNoRelapse.pdf"), g, width = 5, height = 5)
+abD <- data.table(metric = "pct_of_all_spots", n_R = length(a), n_NR = length(b), median_R = median(a), median_NR = median(b), P = pD)
 print(abD); fwrite(abD, file.path(out_dir, "N_YAPRevHigh_spots_tests.csv"))
 
