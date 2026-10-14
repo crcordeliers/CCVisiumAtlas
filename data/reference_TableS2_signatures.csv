@@ -1,0 +1,321 @@
+level,signature,rank,gene
+metacluster,Tumor-cycling,1,BAIAP2L1
+metacluster,Tumor-cycling,2,CDX2
+metacluster,Tumor-cycling,3,CENPV
+metacluster,Tumor-cycling,4,MARVELD3
+metacluster,Tumor-cycling,5,HSD11B2
+metacluster,Tumor-cycling,6,FAM83G
+metacluster,Tumor-cycling,7,HDHD5
+metacluster,Tumor-cycling,8,RPF2
+metacluster,Tumor-cycling,9,C1orf116
+metacluster,Tumor-cycling,10,RNF138
+metacluster,Tumor-cycling,11,LRRC45
+metacluster,Tumor-cycling,12,FRK
+metacluster,Tumor-cycling,13,LBR
+metacluster,Tumor-cycling,14,ATG16L1
+metacluster,Tumor-cycling,15,ADK
+metacluster,Tumor-cycling,16,RUNDC1
+metacluster,Tumor-cycling,17,OTUD3
+metacluster,Tumor-cycling,18,MTRES1
+metacluster,Tumor-cycling,19,C6orf136
+metacluster,Tumor-cycling,20,POLR1E
+metacluster,Tumor-intermediate,1,KRT8
+metacluster,Tumor-intermediate,2,CDH1
+metacluster,Tumor-intermediate,3,FXYD3
+metacluster,Tumor-intermediate,4,LGALS4
+metacluster,Tumor-intermediate,5,RACK1
+metacluster,Tumor-intermediate,6,PPDPF
+metacluster,Tumor-intermediate,7,ST14
+metacluster,Tumor-intermediate,8,TSPAN8
+metacluster,Tumor-intermediate,9,AKAP1
+metacluster,Tumor-intermediate,10,EPCAM
+metacluster,Tumor-intermediate,11,LAD1
+metacluster,Tumor-intermediate,12,CDH17
+metacluster,Tumor-intermediate,13,TFF3
+metacluster,Tumor-intermediate,14,SH3YL1
+metacluster,Tumor-intermediate,15,ANXA2
+metacluster,Tumor-intermediate,16,MARCKSL1
+metacluster,Tumor-intermediate,17,PPP1R1B
+metacluster,Tumor-intermediate,18,ATP1B1
+metacluster,Tumor-intermediate,19,RAB25
+metacluster,Tumor-intermediate,20,COX5B
+metacluster,Tumor-infiltrated,1,PHGR1
+metacluster,Tumor-infiltrated,2,LGALS4
+metacluster,Tumor-infiltrated,3,CLDN7
+metacluster,Tumor-infiltrated,4,FABP1
+metacluster,Tumor-infiltrated,5,EPCAM
+metacluster,Tumor-infiltrated,6,PIGR
+metacluster,Tumor-infiltrated,7,TSPAN1
+metacluster,Tumor-infiltrated,8,KRT8
+metacluster,Tumor-infiltrated,9,GOLM1
+metacluster,Tumor-infiltrated,10,CDHR5
+metacluster,Tumor-infiltrated,11,ELF3
+metacluster,Tumor-infiltrated,12,GPA33
+metacluster,Tumor-infiltrated,13,FXYD3
+metacluster,Tumor-infiltrated,14,CDH17
+metacluster,Tumor-infiltrated,15,MUC13
+metacluster,Tumor-infiltrated,16,MUC12
+metacluster,Tumor-infiltrated,17,TSPAN8
+metacluster,Tumor-infiltrated,18,CDH1
+metacluster,Tumor-infiltrated,19,KRT20
+metacluster,Tumor-infiltrated,20,DUOX2
+metacluster,Tumor-fibroblasts,1,ANP32E
+metacluster,Tumor-fibroblasts,2,CHCHD1
+metacluster,Tumor-fibroblasts,3,SRRT
+metacluster,Tumor-fibroblasts,4,UQCC3
+metacluster,Tumor-fibroblasts,5,ARF3
+metacluster,Tumor-fibroblasts,6,G3BP2
+metacluster,Tumor-fibroblasts,7,AURKAIP1
+metacluster,Tumor-fibroblasts,8,GOLPH3
+metacluster,Tumor-fibroblasts,9,HNRNPUL1
+metacluster,Tumor-fibroblasts,10,BANF1
+metacluster,Tumor-fibroblasts,11,CLPTM1L
+metacluster,Tumor-fibroblasts,12,CRELD2
+metacluster,Tumor-fibroblasts,13,ARGLU1
+metacluster,Tumor-fibroblasts,14,SNRNP70
+metacluster,Tumor-fibroblasts,15,RNF213
+metacluster,Tumor-fibroblasts,16,TARS
+metacluster,Tumor-fibroblasts,17,TRADD
+metacluster,Tumor-fibroblasts,18,UBXN6
+metacluster,Tumor-fibroblasts,19,NME3
+metacluster,Tumor-fibroblasts,20,TYK2
+metacluster,Stroma-A,1,VCAN
+metacluster,Stroma-A,2,SULF1
+metacluster,Stroma-A,3,AEBP1
+metacluster,Stroma-A,4,LGALS1
+metacluster,Stroma-A,5,BGN
+metacluster,Stroma-A,6,SPARC
+metacluster,Stroma-A,7,COL6A3
+metacluster,Stroma-A,8,MMP14
+metacluster,Stroma-A,9,FSTL1
+metacluster,Stroma-A,10,COL1A1
+metacluster,Stroma-A,11,FBN1
+metacluster,Stroma-A,12,LUM
+metacluster,Stroma-A,13,VIM
+metacluster,Stroma-A,14,MMP2
+metacluster,Stroma-A,15,EMILIN1
+metacluster,Stroma-A,16,C1R
+metacluster,Stroma-A,17,IGFBP7
+metacluster,Stroma-A,18,C1S
+metacluster,Stroma-A,19,TIMP3
+metacluster,Stroma-A,20,NNMT
+metacluster,Stroma-B,1,MYL9
+metacluster,Stroma-B,2,C1R
+metacluster,Stroma-B,3,ACTA2
+metacluster,Stroma-B,4,IGFBP7
+metacluster,Stroma-B,5,FLNA
+metacluster,Stroma-B,6,CAVIN1
+metacluster,Stroma-B,7,TAGLN
+metacluster,Stroma-B,8,MXRA7
+metacluster,Stroma-B,9,TPM2
+metacluster,Stroma-B,10,COL6A2
+metacluster,Stroma-B,11,C1S
+metacluster,Stroma-B,12,EMILIN1
+metacluster,Stroma-B,13,CRISPLD2
+metacluster,Stroma-B,14,LGALS1
+metacluster,Stroma-B,15,SELENOM
+metacluster,Stroma-B,16,LAMA4
+metacluster,Stroma-B,17,COL6A3
+metacluster,Stroma-B,18,DCN
+metacluster,Stroma-B,19,CALD1
+metacluster,Stroma-B,20,COL3A1
+metacluster,Necrosis,1,CXCL8
+metacluster,Necrosis,2,FTH1
+metacluster,Necrosis,3,TREM1
+metacluster,Necrosis,4,AQP9
+metacluster,Necrosis,5,PLAUR
+metacluster,Necrosis,6,BCL2A1
+metacluster,Necrosis,7,S100A9
+metacluster,Necrosis,8,S100A8
+metacluster,Necrosis,9,IL1B
+metacluster,Necrosis,10,G0S2
+metacluster,Necrosis,11,SLC11A1
+metacluster,Necrosis,12,ADM
+metacluster,Necrosis,13,CCL4
+metacluster,Necrosis,14,MMP1
+metacluster,Necrosis,15,CCL3L1
+metacluster,Necrosis,16,FTL
+metacluster,Necrosis,17,ITGAX
+metacluster,Necrosis,18,IL1RN
+metacluster,Necrosis,19,SLC2A3
+metacluster,Necrosis,20,OSM
+metacluster,Muscularis propria,1,COX18
+metacluster,Muscularis propria,2,PHETA1
+metacluster,Muscularis propria,3,FMN1
+metacluster,Muscularis propria,4,CMTM8
+metacluster,Muscularis propria,5,RAP2A
+metacluster,Muscularis propria,6,SRSF8
+metacluster,Muscularis propria,7,BLOC1S4
+metacluster,Muscularis propria,8,C22orf39
+metacluster,Muscularis propria,9,PRC1
+metacluster,Muscularis propria,10,RNF215
+metacluster,Muscularis propria,11,ITPKC
+metacluster,Muscularis propria,12,EED
+metacluster,Muscularis propria,13,CARNMT1
+metacluster,Muscularis propria,14,MON1A
+metacluster,Muscularis propria,15,CAMTA1
+metacluster,Muscularis propria,16,GNPAT
+metacluster,Muscularis propria,17,BANP
+metacluster,Muscularis propria,18,PAXIP1
+metacluster,Muscularis propria,19,RNF169
+metacluster,Muscularis propria,20,FOXD2
+metacluster,Lymphoid aggregates,1,SEPTIN1
+metacluster,Lymphoid aggregates,2,CD27
+metacluster,Lymphoid aggregates,3,WDFY4
+metacluster,Lymphoid aggregates,4,TRBC2
+metacluster,Lymphoid aggregates,5,LTB
+metacluster,Lymphoid aggregates,6,CD79A
+metacluster,Lymphoid aggregates,7,CORO1A
+metacluster,Lymphoid aggregates,8,PPP1R16B
+metacluster,Lymphoid aggregates,9,FCRL1
+metacluster,Lymphoid aggregates,10,PTPRC
+metacluster,Lymphoid aggregates,11,POU2AF1
+metacluster,Lymphoid aggregates,12,TBC1D10C
+metacluster,Lymphoid aggregates,13,CD37
+metacluster,Lymphoid aggregates,14,DOCK8
+metacluster,Lymphoid aggregates,15,IKZF1
+metacluster,Lymphoid aggregates,16,TRAJ28
+metacluster,Lymphoid aggregates,17,JAK3
+metacluster,Lymphoid aggregates,18,ZAP70
+metacluster,Lymphoid aggregates,19,SPOCK2
+metacluster,Lymphoid aggregates,20,ARHGAP9
+metacluster,Nerves - arteries,1,NMT2
+metacluster,Nerves - arteries,2,SEMA3F
+metacluster,Nerves - arteries,3,TEPSIN
+metacluster,Nerves - arteries,4,AMZ2
+metacluster,Nerves - arteries,5,NGLY1
+metacluster,Nerves - arteries,6,COG2
+metacluster,Nerves - arteries,7,KATNA1
+metacluster,Nerves - arteries,8,ZNF337
+metacluster,Nerves - arteries,9,TERF2
+metacluster,Nerves - arteries,10,COA6
+metacluster,Nerves - arteries,11,LANCL1
+metacluster,Nerves - arteries,12,ELP3
+metacluster,Nerves - arteries,13,CTU2
+metacluster,Nerves - arteries,14,TGIF2
+metacluster,Nerves - arteries,15,BBS2
+metacluster,Nerves - arteries,16,CDK2
+metacluster,Nerves - arteries,17,MARVELD3
+metacluster,Nerves - arteries,18,LIPH
+metacluster,Nerves - arteries,19,PLGRKT
+metacluster,Nerves - arteries,20,TMEM167A
+metacluster,Normal colon epithelium,1,STX4
+metacluster,Normal colon epithelium,2,TSNARE1
+metacluster,Normal colon epithelium,3,IGFBP2
+metacluster,Normal colon epithelium,4,BTN3A1
+metacluster,Normal colon epithelium,5,WHAMM
+metacluster,Normal colon epithelium,6,ZC3HAV1
+metacluster,Normal colon epithelium,7,TULP3
+metacluster,Normal colon epithelium,8,FAM168A
+metacluster,Normal colon epithelium,9,NUDT14
+metacluster,Normal colon epithelium,10,PCNT
+metacluster,Normal colon epithelium,11,ERCC2
+metacluster,Normal colon epithelium,12,POLE
+metacluster,Normal colon epithelium,13,LRP8
+metacluster,Normal colon epithelium,14,UTP25
+metacluster,Normal colon epithelium,15,HDHD5
+metacluster,Normal colon epithelium,16,ZSCAN9
+metacluster,Normal colon epithelium,17,ZNF607
+metacluster,Normal colon epithelium,18,SIAH1
+metacluster,Normal colon epithelium,19,ABCB6
+metacluster,Normal colon epithelium,20,SMYD3
+stromal_subcluster,Stroma-A1,1,LRRC45
+stromal_subcluster,Stroma-A1,2,REX1BD
+stromal_subcluster,Stroma-A1,3,SPG21
+stromal_subcluster,Stroma-A1,4,TMEM50A
+stromal_subcluster,Stroma-A1,5,PSMC5
+stromal_subcluster,Stroma-A1,6,AGPAT3
+stromal_subcluster,Stroma-A1,7,TMED9
+stromal_subcluster,Stroma-A1,8,SLC35A4
+stromal_subcluster,Stroma-A1,9,MTPN
+stromal_subcluster,Stroma-A1,10,CAPN2
+stromal_subcluster,Stroma-A1,11,RNF145
+stromal_subcluster,Stroma-A1,12,SON
+stromal_subcluster,Stroma-A1,13,CTNNB1
+stromal_subcluster,Stroma-A1,14,VCP
+stromal_subcluster,Stroma-A1,15,RBX1
+stromal_subcluster,Stroma-A1,16,AP1G1
+stromal_subcluster,Stroma-A1,17,SEC61A1
+stromal_subcluster,Stroma-A1,18,TUBGCP2
+stromal_subcluster,Stroma-A1,19,LAMTOR1
+stromal_subcluster,Stroma-A1,20,SPATA2
+stromal_subcluster,Stroma-A2,1,CTHRC1
+stromal_subcluster,Stroma-A2,2,AEBP1
+stromal_subcluster,Stroma-A2,3,THBS2
+stromal_subcluster,Stroma-A2,4,COL1A1
+stromal_subcluster,Stroma-A2,5,CTSK
+stromal_subcluster,Stroma-A2,6,COL5A1
+stromal_subcluster,Stroma-A2,7,ADAMTS2
+stromal_subcluster,Stroma-A2,8,FBLN2
+stromal_subcluster,Stroma-A2,9,SULF1
+stromal_subcluster,Stroma-A2,10,COL11A1
+stromal_subcluster,Stroma-A2,11,POSTN
+stromal_subcluster,Stroma-A2,12,ARL4C
+stromal_subcluster,Stroma-A2,13,HTRA1
+stromal_subcluster,Stroma-A2,14,LRRC15
+stromal_subcluster,Stroma-A2,15,ANTXR1
+stromal_subcluster,Stroma-A2,16,COL12A1
+stromal_subcluster,Stroma-A2,17,TAFA5
+stromal_subcluster,Stroma-A2,18,COL10A1
+stromal_subcluster,Stroma-A2,19,CDH11
+stromal_subcluster,Stroma-A2,20,ADAMTS12
+stromal_subcluster,Stroma-B1,1,PLBD1
+stromal_subcluster,Stroma-B1,2,MTRES1
+stromal_subcluster,Stroma-B1,3,COMMD8
+stromal_subcluster,Stroma-B1,4,ODF2
+stromal_subcluster,Stroma-B1,5,UGGT2
+stromal_subcluster,Stroma-B1,6,SFSWAP
+stromal_subcluster,Stroma-B1,7,PITPNM2
+stromal_subcluster,Stroma-B1,8,TYW3
+stromal_subcluster,Stroma-B1,9,CENPE
+stromal_subcluster,Stroma-B1,10,KAT7
+stromal_subcluster,Stroma-B1,11,LMTK2
+stromal_subcluster,Stroma-B1,12,CCDC77
+stromal_subcluster,Stroma-B1,13,IFT88
+stromal_subcluster,Stroma-B1,14,MBOAT1
+stromal_subcluster,Stroma-B1,15,PRIM2
+stromal_subcluster,Stroma-B1,16,COQ10B
+stromal_subcluster,Stroma-B1,17,CCDC117
+stromal_subcluster,Stroma-B1,18,FZD6
+stromal_subcluster,Stroma-B1,19,ZNF248
+stromal_subcluster,Stroma-B1,20,NDUFAF4
+stromal_subcluster,Stroma-B2,1,SYNM
+stromal_subcluster,Stroma-B2,2,SYNPO2
+stromal_subcluster,Stroma-B2,3,SORBS1
+stromal_subcluster,Stroma-B2,4,JPH2
+stromal_subcluster,Stroma-B2,5,KCNMB1
+stromal_subcluster,Stroma-B2,6,ACTG2
+stromal_subcluster,Stroma-B2,7,DES
+stromal_subcluster,Stroma-B2,8,PPP1R12B
+stromal_subcluster,Stroma-B2,9,AKAP6
+stromal_subcluster,Stroma-B2,10,CNN1
+stromal_subcluster,Stroma-B2,11,TNS1
+stromal_subcluster,Stroma-B2,12,LMOD1
+stromal_subcluster,Stroma-B2,13,RBPMS2
+stromal_subcluster,Stroma-B2,14,MYLK
+stromal_subcluster,Stroma-B2,15,KCNMA1
+stromal_subcluster,Stroma-B2,16,PGM5
+stromal_subcluster,Stroma-B2,17,PLN
+stromal_subcluster,Stroma-B2,18,SPEG
+stromal_subcluster,Stroma-B2,19,MAB21L2
+stromal_subcluster,Stroma-B2,20,CHRDL2
+stromal_subcluster,Stroma-B3,1,IL1B
+stromal_subcluster,Stroma-B3,2,CXCL8
+stromal_subcluster,Stroma-B3,3,CXCL5
+stromal_subcluster,Stroma-B3,4,NAMPT
+stromal_subcluster,Stroma-B3,5,G0S2
+stromal_subcluster,Stroma-B3,6,FTH1
+stromal_subcluster,Stroma-B3,7,CSF3
+stromal_subcluster,Stroma-B3,8,S100A9
+stromal_subcluster,Stroma-B3,9,OSM
+stromal_subcluster,Stroma-B3,10,S100A8
+stromal_subcluster,Stroma-B3,11,MMP1
+stromal_subcluster,Stroma-B3,12,CXCL3
+stromal_subcluster,Stroma-B3,13,ADM
+stromal_subcluster,Stroma-B3,14,SOD2
+stromal_subcluster,Stroma-B3,15,ANGPTL4
+stromal_subcluster,Stroma-B3,16,IL24
+stromal_subcluster,Stroma-B3,17,IL11
+stromal_subcluster,Stroma-B3,18,PLAUR
+stromal_subcluster,Stroma-B3,19,ERRFI1
+stromal_subcluster,Stroma-B3,20,TREM1
