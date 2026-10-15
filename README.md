@@ -13,11 +13,11 @@ cohorts (PETACC-8, IDEA-France, PRODIGE-13).
 
 | Folder | Content |
 |---|---|
-| `R/` | core Visium pipeline (`Step1`-`Step7`: Space Ranger outputs -> meta-spots -> meta-clusters -> stromal sub-clusters), names and colours (`00_config.R`), and the figure scripts that run directly on the pipeline objects |
-| `analyses/` | all other analyses, one folder per analysis, named after the panels it produces (e.g. `01_metaspots_S1`, `03_clustering_benchmark_S2cd`, `15_bulk_survival_Fig6_S13`); each script starts with a header giving the panels, inputs, outputs and usage |
+| `R/` | core Visium pipeline (`Step1`-`Step7`: Space Ranger outputs -> meta-spots -> meta-clusters -> stromal sub-clusters), which builds the objects used by all analyses, and shared code (names and colours in `00_config.R`, plotting helper `boxplot_relapse.R`) |
+| `analyses/` | all figures and analyses, one folder per analysis, named after the panels it produces (e.g. `00_core_figures_Fig1b_2a_3ac_4a_S4e_S8acf`, `01_metaspots_S1`, `03_clustering_benchmark_S2cd`, `15_bulk_survival_Fig6_S13`); each script starts with a header giving the panels, inputs, outputs and usage |
+| `data/` | gene signatures, Supplementary Table S2 (`reference_TableS2_signatures.csv`), meta-spot reference labels, minimal annotation of the 48 samples (sex, MMR status, relapse), Pelka et al. 2021 cell-type hierarchy, sample list |
 
 The script of every figure panel is listed in [Figures and scripts](#figures-and-scripts).
-| `data/` | gene signatures, Supplementary Table S2 (`reference_TableS2_signatures.csv`), meta-spot reference labels, minimal annotation of the 48 samples (sex, MMR status, relapse), Pelka et al. 2021 cell-type hierarchy, sample list |
 
 ## Data
 
@@ -31,7 +31,7 @@ The script of every figure panel is listed in [Figures and scripts](#figures-and
 
 ## Requirements
 
-- Core pipeline (`R/`): R 4.3.1 with the package versions of `renv.lock` (`renv::restore()` from the repository
+- Core pipeline (`R/`) and `analyses/00_*`: R 4.3.1 with the package versions of `renv.lock` (`renv::restore()` from the repository
   root): Seurat 5.4.0, harmony 1.2.4 (harmony 1.x is required), GSVA 1.50.5.
 - Other R analyses: R >= 4.3 with the packages loaded in each script (e.g. CellChat 2.2, spacexr / RCTD, BayesSpace,
   BASS, aricode, spdep, survival, survminer, enrichR); the R version is given in the script header when it differs.
@@ -71,24 +71,27 @@ Rscript R/Step6_Pelka_Signatures.R       # Pelka et al. signatures
 Rscript R/Step7_Check_results.R          # comparison with the reference results in data/
 ```
 
+The figure scripts in `analyses/` are then run from the repository root, e.g.
+`Rscript analyses/00_core_figures_Fig1b_2a_3ac_4a_S4e_S8acf/Fig1b_metaspots.R`.
+
 ## Figures and scripts
 
 | Figure | Script |
 |---|---|
-| Fig. 1b | `R/Fig1b_metaspots.R` |
-| Fig. 2a | `R/Fig2a_S4e_ecotypes.R` |
+| Fig. 1b | `analyses/00_core_figures_Fig1b_2a_3ac_4a_S4e_S8acf/Fig1b_metaspots.R` |
+| Fig. 2a | `analyses/00_core_figures_Fig1b_2a_3ac_4a_S4e_S8acf/Fig2a_S4e_ecotypes.R` |
 | Fig. 2c, 3b | `analyses/04_cell2location_Fig2c_Fig3b/01-06` |
-| Fig. 3a, 3c | `R/Fig3ac_stromal_subclusters.R` |
-| Fig. 4a | `R/Fig4a_S8acf_relapse_stroma.R` |
+| Fig. 3a, 3c | `analyses/00_core_figures_Fig1b_2a_3ac_4a_S4e_S8acf/Fig3ac_stromal_subclusters.R` |
+| Fig. 4a | `analyses/00_core_figures_Fig1b_2a_3ac_4a_S4e_S8acf/Fig4a_S8acf_relapse_stroma.R` |
 | Fig. 6a-g | `analyses/15_bulk_survival_Fig6_S13/00_build_bulk_dataset.R`, `01_Fig6_survival.R` |
 | Supplementary Fig. S1 | `analyses/01_metaspots_S1/FigS1_metaspots_and_resolution.R` |
 | Supplementary Fig. S2a,b | `analyses/02_spatial_organisation_S2ab/FigS2ab_projection_and_MoranI.R` |
 | Supplementary Fig. S2c,d | `analyses/03_clustering_benchmark_S2cd/benchmark_clustering.R`, `benchmark_clustering.py` |
 | Supplementary Fig. S4a-d | `analyses/05_ecotype_hallmarks_S4/FigS4abcd_violins.R` |
-| Supplementary Fig. S4e | `R/Fig2a_S4e_ecotypes.R` |
+| Supplementary Fig. S4e | `analyses/00_core_figures_Fig1b_2a_3ac_4a_S4e_S8acf/Fig2a_S4e_ecotypes.R` |
 | Supplementary Fig. S5a,b, S6, S7 | `analyses/06_ecotype_composition_S5ab_S6_S7/FigS5ab_S6_S7_composition.R` |
 | Supplementary Fig. S5c | `analyses/07_CMS_pseudobulk_S5c/01-02` |
-| Supplementary Fig. S8a, S8c, S8f | `R/Fig4a_S8acf_relapse_stroma.R` |
+| Supplementary Fig. S8a, S8c, S8f | `analyses/00_core_figures_Fig1b_2a_3ac_4a_S4e_S8acf/Fig4a_S8acf_relapse_stroma.R` |
 | Supplementary Fig. S8b, S9, Supplementary Table S4 | `analyses/08_relapse_genes_S8b_S9_TableS4/FigS8b_S9_TableS4.R` |
 | Supplementary Fig. S8d | `analyses/09_TF_binding_S8de/FigS8d_EnrichR_TF.R` |
 | Supplementary Fig. S8g, S10a, S10b, S10e | `analyses/11_cellchat_S10abe_S8g/01-03` |
