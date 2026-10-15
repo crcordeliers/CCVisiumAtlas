@@ -5,6 +5,8 @@ Code for the spatial transcriptomics analyses of
 > Cazelles A., Pilati C. *et al.* Profiling colon cancer architecture with spatial transcriptomics identifies
 > clinically relevant stromal ecotypes.
 
+![Graphical abstract](docs/graphical_abstract.png)
+
 48 stage III colon tumours from the PETACC-8 trial profiled with 10x Genomics Visium (one tumour per capture area),
 4 of them re-profiled with Visium HD; prognostic validation of the spatially derived signatures in three bulk RNA-seq
 cohorts (PETACC-8, IDEA-France, PRODIGE-13).
