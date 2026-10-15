@@ -13,8 +13,10 @@ cohorts (PETACC-8, IDEA-France, PRODIGE-13).
 
 | Folder | Content |
 |---|---|
-| `R/` | core Visium pipeline (`Step1`-`Step7`: Space Ranger outputs -> meta-spots -> meta-clusters -> stromal sub-clusters) and the scripts of Fig. 1b, 2a, 3a, 3c, 4a and Supplementary Fig. S4e, S8a, S8c, S8f; names and colours in `R/00_config.R` |
-| `analyses/` | one folder per analysis (supplementary figures, Fig. 2c, 3b and 6); each script starts with a header giving the panels, inputs, outputs and usage |
+| `R/` | core Visium pipeline (`Step1`-`Step7`: Space Ranger outputs -> meta-spots -> meta-clusters -> stromal sub-clusters), names and colours (`00_config.R`), and the figure scripts that run directly on the pipeline objects |
+| `analyses/` | all other analyses, one folder per analysis, named after the panels it produces (e.g. `01_metaspots_S1`, `03_clustering_benchmark_S2cd`, `15_bulk_survival_Fig6_S13`); each script starts with a header giving the panels, inputs, outputs and usage |
+
+The script of every figure panel is listed in [Figures and scripts](#figures-and-scripts).
 | `data/` | gene signatures, Supplementary Table S2 (`reference_TableS2_signatures.csv`), meta-spot reference labels, minimal annotation of the 48 samples (sex, MMR status, relapse), Pelka et al. 2021 cell-type hierarchy, sample list |
 
 ## Data
