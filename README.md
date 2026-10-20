@@ -106,3 +106,9 @@ The figure scripts in `analyses/` are then run from the repository root, e.g.
 
 Scripts numbered `01`, `02`, ... within a folder are run in that order. The spot-level YAP-Rev score
 (`analyses/10_YAPRev_spots_S8g-j/01-02`) is also used by the CellChat (`11_*`) and stromal gradient (`13_*`) analyses.
+
+## License
+
+The code in this repository is released under the [MIT License](LICENSE). The third-party gene lists and
+tables in `data/` (Pelka et al. 2021, Turley et al. Nature 2021) remain subject to the terms of their
+original publications.
