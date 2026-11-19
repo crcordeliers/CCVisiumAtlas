@@ -41,6 +41,29 @@ The script of every figure panel is listed in [Figures and scripts](#figures-and
   cellcharter 0.3.7, GraphST 1.1.1 and harmonypy 2.0.0 (`analyses/03_*`); pandas, numpy, scipy and matplotlib
   (`analyses/10_*`, `analyses/13_*`). cell2location, scVI / CellCharter and GraphST are run on a GPU.
 
+## System requirements, installation and expected run time
+
+- Operating systems: tested on Linux (Ubuntu 24.04 HPC cluster with SLURM) for the full pipeline and on macOS
+  (Apple silicon) for the figure scripts.
+- Tested versions: R 4.3.1 (core pipeline, exact package versions in `renv.lock`), R 4.5 for some figure scripts
+  (given in the script header), Python 3 with the package versions listed above.
+- Hardware: no non-standard hardware for the R pipeline, but the 48 samples need about 80 GB of RAM (peak
+  memory of Step 1 to Step 7: 75 GB). An NVIDIA GPU is required for cell2location, scVI / CellCharter and GraphST.
+- Installation: `git clone https://github.com/crcordeliers/CCVisiumAtlas`, then `renv::restore()` from the
+  repository root (R packages) and `pip install` of the Python packages at the versions listed above. Installation
+  takes about 1 h when binary packages are available (CRAN / Bioconductor binaries on macOS, Posit Package Manager on
+  Linux) and several hours when all packages are compiled from source.
+- Run time: the core pipeline (`R/Step1` to `R/Step7`, 48 samples) took 2 h 15 min to 2 h 45 min on 8 CPU cores of
+  an HPC node; most figure scripts run in less than 15 min.
+
+## Demo and expected output
+
+No public demo dataset is provided: the Visium raw data come from the PETACC-8 trial and are under controlled access
+(EGA, EGAD50000002091). Once access is granted, running `R/Step1` to `R/Step7` on the Space Ranger outputs reproduces the
+published clustering, and `R/Step7_Check_results.R` compares the results with the reference tables provided in `data/`.
+Expected output: 3,231 / 3,231 meta-spots and 774 / 774 stromal meta-spots with the same labels as in the paper
+(adjusted Rand index 1), and the 16 signatures of Supplementary Table S2 identical (genes and order).
+
 ## Configuration
 
 All scripts are run from the repository root. Paths are set with environment variables:
