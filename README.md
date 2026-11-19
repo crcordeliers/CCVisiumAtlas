@@ -47,19 +47,31 @@ The script of every figure panel is listed in [Figures and scripts](#figures-and
   (Apple silicon) for the figure scripts.
 - Tested versions: R 4.3.1 (core pipeline, exact package versions in `renv.lock`), R 4.5 for some figure scripts
   (given in the script header), Python 3 with the package versions listed above.
-- Hardware: no non-standard hardware for the R pipeline, but the 48 samples need about 80 GB of RAM (peak
-  memory of Step 1 to Step 7: 75 GB). An NVIDIA GPU is required for cell2location, scVI / CellCharter and GraphST.
+- Hardware: an NVIDIA GPU is required for cell2location, scVI / CellCharter and GraphST. The core pipeline and several
+  analyses need more memory than a standard desktop computer (16-32 GB RAM) and were run on an HPC cluster; the
+  downstream analyses run on a desktop or laptop computer (see the table below).
 - Installation: `git clone https://github.com/crcordeliers/CCVisiumAtlas`, then `renv::restore()` from the
   repository root (R packages) and `pip install` of the Python packages at the versions listed above. Installation
   takes about 1 h when binary packages are available (CRAN / Bioconductor binaries on macOS, Posit Package Manager on
   Linux) and several hours when all packages are compiled from source.
-- Run time: the core pipeline (`R/Step1` to `R/Step7`, 48 samples) took 2 h 15 min to 2 h 45 min on 8 CPU cores of
-  an HPC node; most figure scripts run in less than 15 min.
+- Run time and peak memory measured on the HPC cluster (SLURM accounting of the reproduction runs):
+
+| Analysis | Run time | Peak RAM | Standard desktop |
+|---|---|---|---|
+| Core pipeline `R/Step1`-`Step7` (48 samples, 8 CPU cores) | 2 h 15 min - 2 h 45 min | 75-93 GB | no (HPC node or workstation with >= 100 GB RAM) |
+| Figure scripts using the Visium objects (`analyses/00`-`02`, `05`-`08`, `10`, `12`; 15 scripts run in a row) | 1 h in total | 30 GB | workstation (>= 32 GB RAM) |
+| Clustering benchmark `analyses/03_*` (BASS, BayesSpace) | 3.5-5 h | 46-149 GB | no |
+| cell2location `analyses/04_*` (reference, then about 45 min per sample) | 7 h + 48 x 45 min | 10-27 GB | no (GPU) |
+| Visium HD deconvolution with RCTD `analyses/14_*` | 0.3-6 h per sample | 26-48 GB | no |
+| YAP-Rev scores per spot `analyses/10_*` | 1-2 min per sample | 5 GB | yes |
+| Visium HD figures `analyses/14_*` (from the RCTD results) | < 20 min | < 3 GB | yes |
+| Bulk survival `analyses/15_*` | 10 min | 5 GB | yes |
+
 
 ## Demo and expected output
 
 No public demo dataset is provided: the Visium raw data come from the PETACC-8 trial and are under controlled access
-(EGA, EGAD50000002091). Once access is granted, running `R/Step1` to `R/Step7` on the Space Ranger outputs reproduces the
+(EGA, EGAD50000002091), and the core pipeline cannot run on a standard desktop computer (see the run-time table above). Once access is granted, running `R/Step1` to `R/Step7` on the Space Ranger outputs reproduces the
 published clustering, and `R/Step7_Check_results.R` compares the results with the reference tables provided in `data/`.
 Expected output: 3,231 / 3,231 meta-spots and 774 / 774 stromal meta-spots with the same labels as in the paper
 (adjusted Rand index 1), and the 16 signatures of Supplementary Table S2 identical (genes and order).
